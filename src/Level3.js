@@ -6,16 +6,16 @@ import Confetti from 'react-confetti';
 import styles from './Level3.module.css';
 
 const RAW_DATA = [
-  { word: 'pelajar', type: 'Am' },
+  { word: 'Pelajar', type: 'Am' },
   { word: 'Gunung Ledang', type: 'Khas' },
   { word: 'Nescafé', type: 'Khas' },
-  { word: 'kampung', type: 'Am' },
+  { word: 'Kampung', type: 'Am' },
   { word: 'Sultan Ibrahim', type: 'Khas' },
-  { word: 'lembu', type: 'Am' },
+  { word: 'Lembu', type: 'Am' },
   { word: 'Hari Guru', type: 'Khas' },
-  { word: 'bantal', type: 'Am' },
-  { word: 'pensel', type: 'Am' },
-  { word: 'meja', type: 'Am' },
+  { word: 'Bantal', type: 'Am' },
+  { word: 'Pensel', type: 'Am' },
+  { word: 'Meja', type: 'Am' },
   { word: 'Kerusi', type: 'Am' },
   { word: 'November', type: 'Khas' },
   { word: 'Kuala Lumpur', type: 'Khas' },
