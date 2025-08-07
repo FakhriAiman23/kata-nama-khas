@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.56433a59.css",
+    "main.js": "/static/js/main.a55ddd91.js",
+    "static/media/backgroundLyric.png": "/static/media/backgroundLyric.d4fc8ed5f364f927c1dc.png",
+    "static/media/dirt.png": "/static/media/dirt.db72c0629ef6ceae5e66.png",
+    "static/media/mountain.png": "/static/media/mountain.11d7ad06ec221db0c199.png",
+    "static/media/MinecraftRegular-Bmg3.otf": "/static/media/MinecraftRegular-Bmg3.82ba08919dc2add9422f.otf",
+    "static/media/MinecraftTen-VGORe.ttf": "/static/media/MinecraftTen-VGORe.cd1235551b5f89f4710f.ttf",
+    "index.html": "/index.html",
+    "main.56433a59.css.map": "/static/css/main.56433a59.css.map",
+    "main.a55ddd91.js.map": "/static/js/main.a55ddd91.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.56433a59.css",
+    "static/js/main.a55ddd91.js"
+  ]
+}
