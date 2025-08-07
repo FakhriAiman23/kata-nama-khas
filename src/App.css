@@ -1,0 +1,218 @@
+/* ---------- Global Reset ---------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Ensure full viewport height */
+  box-sizing: border-box; /* Standardize box model */
+}
+
+/* Apply box-sizing to all elements for consistent layout */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* ---------- Navigation Bar (Minecraft Style for All Pages) ---------- */
+.App .navbar {
+  position: fixed; /* Keep navbar visible on scroll */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px; /* Fixed height for navigation */
+  background-color: #3a3a3a; /* Dark stone color, Minecraft block-like */
+  font-family: 'Minecraft', monospace; /* Pixelated font for navigation */
+  display: flex;
+  justify-content: space-around; /* Distribute items evenly */
+  align-items: center; /* Center items vertically */
+  font-weight: bold;
+  z-index: 1000; /* Ensure navbar is on top */
+  border-bottom: 4px solid #5a3d2b; /* Thick brown border for a blocky feel */
+  text-shadow: 1px 1px 0 #000; /* Subtle text shadow for pixelated readability */
+}
+
+.App .navbar a {
+  color: #fff; /* White text for contrast */
+  text-decoration: none; /* Remove underline */
+  font-size: 1.1rem;
+  padding: 10px 15px; /* Padding for click area */
+  border-radius: 4px; /* Slightly rounded corners for buttons */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.App .navbar a:hover {
+  background-color: #5a3d2b; /* Brown hover effect, like pressed wood */
+}
+
+/* ---------- Miscellaneous Global Styles ---------- */
+img {
+  max-width: 100%; /* Ensure images are responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 12px; /* Slightly rounded corners for game assets */
+  image-rendering: pixelated; /* Essential for pixel art display */
+}
+
+.container {
+  padding: 2rem;
+  max-width: 1200px; /* Max width for content containers */
+  margin: 0 auto; /* Center containers */
+}
+
+/* Floating animation for elements like icons, common in pixel RPGs */
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-15px); } /* Move up */
+  100% { transform: translateY(0px); } /* Return to original position */
+}
+
+.float {
+  animation: float 3s ease-in-out infinite; /* Apply animation */
+}
+
+/* ---------- Game Layout (Applies to GameLayout.js) ---------- */
+.game-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the top */
+  padding: 80px 1rem 2rem 1rem; /* Add top padding for fixed navbar */
+  background: repeating-linear-gradient( /* Textured background, like blocks */
+    45deg,
+    #1a1a1a, /* Dark block color */
+    #1a1a1a 20px,
+    #2c2c2c 20px, /* Slightly lighter block color */
+    #2c2c2c 40px
+  );
+  font-family: 'Minecraft', monospace; /* Game-specific pixel font */
+  color: #fefefe; /* Light text for readability */
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  box-sizing: border-box; /* Include padding in height calculation */
+}
+
+/* ---------- Game Card (Main game area container) ---------- */
+.game-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: calc(100% - 2rem); /* Fluid width with 1rem gutter on each side */
+  margin: 0 auto; /* Center the card */
+  background-color: #1c1c1c; /* Dark background for the card */
+  border: 5px solid #5a3d2b; /* Strong brown border, Minecraft block-like */
+  border-radius: 8px; /* Slightly rounded corners for the panel */
+  box-shadow: 0 0 12px #000; /* Subtle outer glow */
+  overflow: hidden; /* Hide overflow content */
+  margin-top: 1rem; /* Space below navbar */
+}
+
+/* Media query for wider screens to cap max-width */
+@media (min-width: 1200px) {
+  .game-card {
+    max-width: 1200px;
+  }
+}
+
+/* ---------- Game Inner (Content area within the game card) ---------- */
+.game-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem; /* Increased padding for better spacing */
+  text-align: center;
+  background: linear-gradient( /* Gradient background for depth */
+    to bottom,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.6)
+  );
+  
+  width: 100%;
+  color: #fefefe;
+}
+
+/* ---------- Game Title ---------- */
+.game-title {
+  font-size: 2.2rem; /* Slightly larger title */
+  color: #ffd700; /* Minecraft gold for prominent titles */
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #ca8a04; /* Gold border for title separation */
+  padding-bottom: 0.75rem; /* Increased padding below border */
+  display: inline-block; /* To make border-bottom only as wide as text */
+  text-shadow: 2px 2px 0 #000; /* Stronger shadow for titles, pixelated effect */
+}
+
+/* ---------- Score Box ---------- */
+.score-box {
+  margin-top: 2rem;
+  background-color: #2f2f2f; 
+  border: 3px solid #5a3d2b; 
+  padding: 1rem;
+  box-shadow: inset 0 0 8px #000; 
+  border-radius: 4px; 
+}
+
+/* ---------- Score Label & Number ---------- */
+.score-label {
+  font-size: 1.2rem;
+  color: #fefefe;
+}
+
+.score-number {
+  font-size: 1.85rem; /* Slightly larger score number */
+  color: #00ff88; /* Vibrant green for score, indicating success */
+  text-shadow: 1px 1px 0 #000; /* Subtle shadow */
+  font-weight: bold; /* Make score bold */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .App .navbar {
+    height: 50px; /* Slightly smaller navbar on mobile */
+  }
+
+  .App .navbar a {
+    font-size: 0.9rem; /* Smaller font for links */
+    padding: 8px 12px;
+  }
+
+  .game-layout {
+    padding-top: 70px; /* Adjust top padding for smaller navbar */
+  }
+
+  .game-card {
+    border-width: 3px; /* Thinner border on smaller screens */
+    border-radius: 6px;
+  }
+
+  .game-inner {
+    padding: 1rem; /* Reduced padding */
+  }
+
+  .game-title {
+    font-size: 1.8rem; /* Smaller title font */
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .score-label {
+    font-size: 1rem;
+  }
+
+  .score-number {
+    font-size: 1.5rem;
+  }
+
+}
+
+footer {
+  background-color: #3a3a3a; /* Dark footer color */
+  color: #fefefe; /* Light text for contrast */
+  text-align: center;
+  padding: 1rem;
+  font-family: 'Minecraft', monospace; /* Consistent font */
+  position: relative; /* Relative positioning for footer */
+  bottom: 0;
+  width: 100%;
+}
+footer p {
+  margin: 0; /* Remove default margin */
+  font-size: 0.9rem; /* Smaller font size for footer text */
+  color: #ccc; /* Lighter text for footer */
+  text-shadow: 1px 1px 0 #000; /* Subtle shadow for readability */
+}     
