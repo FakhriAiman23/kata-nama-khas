@@ -1,9 +1,9 @@
-import React from 'react'; // Import useRef and useEffect for audio
+import React from 'react';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
+  NavLink,
   useLocation,
 } from 'react-router-dom';
 
@@ -23,22 +23,63 @@ function AppWrapper() {
 
   return (
     <>
-      {/* Apply 'minecraft-mode' class if on the home page for specific theme styling */}
       <div className={`App ${isMinecraft ? 'minecraft-mode' : ''}`}>
-        {/* Navigation bar, visible on all routes */}
+
+        {/* ── Navbar ── */}
         <nav className="navbar">
-          <Link to="/">🏠 Halaman Utama</Link> {/* Home link with icon */}
-          <Link to="/lyrics">🎵 Lagu</Link> {/* Lyrics link with icon */}
-          <Link to="/levelPage">🎮 Peringkat</Link> {/* Levels link with icon */}
+
+          {/* Brand / Home */}
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              `nav-brand${isActive ? ' nav-active' : ''}`
+            }
+          >
+            <i className="bi bi-shield-fill brand-icon"></i>
+           KATA NAMA KHAS 
+          </NavLink>
+
+          {/* Right-side links */}
+          <div className="nav-links">
+            <NavLink
+              to="/"
+              end
+              className={({ isActive }) => (isActive ? 'nav-active' : '')}
+            >
+              <i className="bi bi-house-door-fill nav-icon"></i>
+              Utama
+            </NavLink>
+
+            <span className="nav-divider" />
+
+            <NavLink
+              to="/lyrics"
+              className={({ isActive }) => (isActive ? 'nav-active' : '')}
+            >
+              <i className="bi bi-music-note-beamed nav-icon"></i>
+              Lagu
+            </NavLink>
+
+            <span className="nav-divider" />
+
+            <NavLink
+              to="/levelPage"
+              className={({ isActive }) => (isActive ? 'nav-active' : '')}
+            >
+              <i className="bi bi-controller nav-icon"></i>
+              Peringkat
+            </NavLink>
+          </div>
         </nav>
 
-        {/* Define routes for different pages/levels */}
+        {/* ── Routes ── */}
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/lyrics" element={<Lyrics />} />
-          <Route path="/level1" element={<Level1 />} />
-          <Route path="/level2" element={<Level2 />} />
-          <Route path="/level3" element={<Level3 />} />
+          <Route path="/"          element={<Home />} />
+          <Route path="/lyrics"    element={<Lyrics />} />
+          <Route path="/level1"    element={<Level1 />} />
+          <Route path="/level2"    element={<Level2 />} />
+          <Route path="/level3"    element={<Level3 />} />
           <Route path="/levelPage" element={<LevelPage />} />
         </Routes>
       </div>
